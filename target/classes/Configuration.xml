@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate configuration file -->
+
+<hibernate-configuration>
+
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rail</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">Mir95@salman</property>
+    <!-- Set session context class -->
+    <property name="hibernate.current_session_context_class">thread</property>
+
+    <!-- JDBC connection pool settings -->
+    <!-- Minimum number of JDBC connections in the pool -->
+    <property name="hibernate.c3p0.min_size">5</property>
+    <!-- Maximum number of JDBC connections in the pool -->
+    <property name="hibernate.c3p0.max_size">20</property>
+    
+    <!-- Other Hibernate properties -->
+    <!-- MySQL dialect for Hibernate -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!-- Display SQL statements in console -->
+    <property name="hibernate.show_sql">true</property>
+    <!-- Automatically update the database schema -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    
+    <!-- Mapping configuration class path -->
+    <mapping class="com.irctc.entity.Train"/>
+    <mapping class="com.irctc.entity.Station"/>
+    <mapping class="com.irctc.entity.Ticket"/>
+    <mapping class="com.irctc.entity.Booking"/>
+    <mapping class="com.irctc.entity.Passenger"/>
+    
+
+    
+  </session-factory>
+</hibernate-configuration>
